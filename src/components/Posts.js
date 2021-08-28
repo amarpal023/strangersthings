@@ -1,34 +1,36 @@
-import React, { useEffect, useState } from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
+import { callApi } from '../util';
+import { Link } from 'react-router-dom';
 
-const apiUrl = `https://strangers-things.herokuapp.com/api/2105-SJS-RM-WEB-PT`;
+import {
+  PostSingle,
+} from '.';
 
-const Posts = () => {
+const Posts = ({posts, token, fetchPosts}) => {
 
-    const [posts, setPosts] = useState([]);
-    console.log('posts: ', posts);
-
-    useEffect(() => {
-        const fetchPosts = async () => {
-            const resp = await fetch(`${apiUrl}/posts`);
-            const data = await resp.json();
-            setPosts(data.data.posts);
-        }
-        fetchPosts();
-    }, [])
+  const handleDelete = async (postId) => {
+    const respObj = await callApi({
+      method: 'DELETE',
+      url: `/posts/${postId}`,
+      token
+    });
+    console.log('respObj: ', respObj);
+    await fetchPosts();
+  }
+  // if... isAuthor is true... then show delete
   
-    return <>
-        
+  return <>
+    {
+      posts.map(post => <PostSingle key={post._id} post={post} token={token}>
+        {/* props.children */}
+        <Link to={`/posts/${post._id}`}>View Post</Link>
         {
-            posts.map(post => <div key={post._id}>
-                <h3>{post.title}</h3>
-                <div>{post.description}</div>
-                <div>Price: {post.price}</div>
-                <div>Seller: {post.author.username}</div>
-                <div>Location: {post.location}</div>
-            </div>)
+          post.isAuthor && <button onClick={() => handleDelete(post._id)}>Delete</button>
         }
-    </>
+      </PostSingle>)
+    }
+  </>
 }
+
 
 export default Posts;

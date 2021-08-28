@@ -1,0 +1,14 @@
+* {
+    background-color: solid cornflowerblue;
+    display:border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.commentbox {
+    
+   
+    border: 1px solid black;
+    
+}
