@@ -51,7 +51,7 @@ const AccountForm = ({setToken, setUser, setMessages, setUserId}) => {
         }}
       } catch (error){
         console.error(error)
-        alert('Invalid Username or Password')
+        alert("Invalid Username or Password. The information you've entered doesn't match any account. Please use the link below to register for an account.")
         setUsername('')
         setPassword('')
       }

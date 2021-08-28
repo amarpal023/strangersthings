@@ -3,9 +3,9 @@ import React from 'react';
 const Home = ({user, token, messages, userId}) => {
   console.log('messages: ', messages);
   return <>
-    <h1>Welcome to Stranger's Things</h1>
     {
       token ? <> 
+      <h1>Welcome to Stranger's Things</h1>
         <div>
           You are logged in as {user}
         </div> 
@@ -16,7 +16,7 @@ const Home = ({user, token, messages, userId}) => {
               console.log('message: ', message);
               return <>
               {userId !== message.fromUser._id ? 
-               <div>{message.fromUser.username} {message.content}</div>
+               <div>{message.post.title}: {message.fromUser.username} replied: {message.content}</div>
               : ''}
               </>
             })
@@ -27,7 +27,7 @@ const Home = ({user, token, messages, userId}) => {
               console.log('message: ', message);
               return <>
               {userId === message.fromUser._id ? 
-               <div>{message.fromUser.username} {message.content}</div>
+               <div>{message.post.title}: {message.fromUser.username} said: {message.content}</div>
               : ''}
               </>
             })

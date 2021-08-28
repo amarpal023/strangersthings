@@ -1,16 +1,98 @@
 * {
-    background-color: solid cornflowerblue;
-    display:border-box;
     margin: 0;
     padding: 0;
     border: 0;
 }
+
 body {
     display:flex;
     flex-direction: column;
     justify-content: center;
-    background-color: aquamarine;
+    background-color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
 }
-.commentbox {
-    border: 1px solid black;    
+header {
+    background:darkslategrey;    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    position: fixed;
+    overflow: hidden;
+    width: 100vw;
+    border-bottom: 10px solid rgb(13, 45, 45);
 }
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 10em;
+    margin-left: 10em;
+    margin-bottom: 5em;
+    /* align-items: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: center; */
+    /* min-height: 60vh; */
+    /* margin-bottom: 10em; */
+    padding-bottom: 10rem;
+}
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: transparent;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    padding-top: 8px;
+    /* margin-bottom: 10em; */
+    height: 3em;
+    overflow: hidden;
+    bottom: 0;
+    width: 80vw;
+    /* border-top:.5px solid #fc3232; */
+}
+
+.emblem {
+    white-space: nowrap;
+    top: 6px;
+    text-decoration: none;       
+    color:whitesmoke; 
+}
+.site-banner {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.posts-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 80vw;
+    font-size: 24px;
+    font-family: 'ITC Benguiat', serif;
+    font-weight: bolder;   
+}
+
+.nav-bar {
+    display: flex;
+    align-content: center;
+    margin: 25px;
+    background-color: darkslategrey;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+}
+
+.nav-link:hover {
+    color: white;
+    background-color: chartreuse;
+}
+

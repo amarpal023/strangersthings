@@ -46,12 +46,15 @@ const App = () => {
   }, [token]);
 
   return <>
-    <header>
-      <Link to="/">Home</Link> | 
+    <header className="site-banner">
+      <Link to ='/' className='emblem'><h1>Stranger's Things</h1></Link>
+      <div className='nav-bar'>
+      <Link to="/" className="nav-link">Home</Link> | 
+      <Link to="/posts" className="nav-link">Posts</Link> |
       {
-        token ? <button className ='logout' onClick = {() => setToken('')}>Log Out</button> : <Link to ='/account/login'>Login</Link> 
+        token ? <button className ='logout' onClick = {() => setToken('')}>Log Out</button> : <Link to ='/account/login' className='nav-link'>Login</Link> 
       } |
-      <Link to="/posts">Posts</Link> |
+      </div>
     </header>
     <main>
       <Route exact path="/">
@@ -72,6 +75,7 @@ const App = () => {
         setMessages={setMessages} setUserId={setUserId}/>
       </Route>
     </main>
+    <footer />
   </>
 }
 
