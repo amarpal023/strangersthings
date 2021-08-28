@@ -9,6 +9,7 @@ body {
     display:flex;
     flex-direction: column;
     justify-content: center;
+    background-color: aquamarine;
 }
 .commentbox {
     border: 1px solid black;    

@@ -16,7 +16,7 @@ const Home = ({user, token, messages, userId}) => {
               console.log('message: ', message);
               return <>
               {userId !== message.fromUser._id ? 
-               <div className="commentbox">{message.fromUser.username} {message.content}</div>
+               <div>{message.fromUser.username} {message.content}</div>
               : ''}
               </>
             })

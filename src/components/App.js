@@ -46,29 +46,32 @@ const App = () => {
   }, [token]);
 
   return <>
-    <Link to="/">Home</Link> | 
-    {
-      token ? <button className ='logout' onClick = {() => setToken('')}>Log Out</button> : <Link to ='/account/login'>Login</Link> 
-    } |
-    <Link to="/posts">Posts</Link> |
-    
-    <Route exact path="/">
-      <Home user={user} token={token} messages={messages} userId={userId}/>
-    </Route>
-    
-    <Route exact path="/posts">
-      {token ? <AddPost token={token} setPosts={setPosts}/> : null}
-      <Posts posts={posts} token={token} fetchPosts={fetchPosts} setPosts={setPosts}/>
-    </Route>
-    
-    <Route exact path="/posts/:postId">
-      <PostView posts={posts} token={token}/>
-    </Route>
-    
-    <Route exact path="/account/:method">
-      <AccountForm setToken={setToken} setUser={setUser} 
-      setMessages={setMessages} setUserId={setUserId}/>
-    </Route>
+    <header>
+      <Link to="/">Home</Link> | 
+      {
+        token ? <button className ='logout' onClick = {() => setToken('')}>Log Out</button> : <Link to ='/account/login'>Login</Link> 
+      } |
+      <Link to="/posts">Posts</Link> |
+    </header>
+    <main>
+      <Route exact path="/">
+        <Home user={user} token={token} messages={messages} userId={userId}/>
+      </Route>
+      
+      <Route exact path="/posts">
+        {token ? <AddPost token={token} setPosts={setPosts}/> : null}
+        <Posts posts={posts} token={token} fetchPosts={fetchPosts} setPosts={setPosts}/>
+      </Route>
+      
+      <Route exact path="/posts/:postId">
+        <PostView posts={posts} token={token}/>
+      </Route>
+      
+      <Route exact path="/account/:method">
+        <AccountForm setToken={setToken} setUser={setUser} 
+        setMessages={setMessages} setUserId={setUserId}/>
+      </Route>
+    </main>
   </>
 }
 

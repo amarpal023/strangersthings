@@ -10,6 +10,7 @@ const PostSingle = ({post, children}) => {
       <div>Price: {post.price}</div>
       <div>Seller: {post.author.username}</div>
       <div>Location: {post.location}</div>
+      <div>Will Deliver: {post.willDeliver ? 'yes' : 'no'}</div>
       {
         children
       }
