@@ -20,9 +20,11 @@ const App = () => {
   const [user, setUser] = useState('');
   const [posts, setPosts] = useState([]);
   const [messages, setMessages] = useState([]);
+  const [userId, setUserId] = useState('');
   console.log('user: ', user);
   console.log('posts: ', posts);
   console.log('messages: ', messages);
+  console.log('userId: ', userId);
 
   
 
@@ -46,14 +48,12 @@ const App = () => {
   return <>
     <Link to="/">Home</Link> | 
     {
-      token ? <button className ='logout' onClick = {() => setToken('')}>LogOut</button> : <Link to ='/account/login'>Login</Link> 
+      token ? <button className ='logout' onClick = {() => setToken('')}>Log Out</button> : <Link to ='/account/login'>Login</Link> 
     } |
     <Link to="/posts">Posts</Link> |
-
-    <Link to="/profile">Profile</Link> |
     
     <Route exact path="/">
-      <Home user={user} token={token} messages={messages}/>
+      <Home user={user} token={token} messages={messages} userId={userId}/>
     </Route>
     
     <Route exact path="/posts">
@@ -67,7 +67,7 @@ const App = () => {
     
     <Route exact path="/account/:method">
       <AccountForm setToken={setToken} setUser={setUser} 
-      messages={setMessages}/>
+      setMessages={setMessages} setUserId={setUserId}/>
     </Route>
   </>
 }

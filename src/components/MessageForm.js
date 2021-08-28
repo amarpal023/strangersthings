@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { callApi } from '../util';
+import { useHistory } from 'react-router';
 
 const MessageForm = ({post, token}) => {
     const [content, setContent] = useState('');
+    const history = useHistory()
     const handleSubmit = async (ev) => {
         ev.preventDefault();
         const url =`/posts/${post._id}/messages`;
@@ -16,6 +18,7 @@ const MessageForm = ({post, token}) => {
                 }
             }
         });
+        history.push('./')
     }
     return <>
     {
