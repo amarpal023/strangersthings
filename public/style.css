@@ -33,12 +33,6 @@ main {
     margin-top: 10em;
     margin-left: 10em;
     margin-bottom: 5em;
-    /* align-items: center;
-    align-content: center;
-    justify-items: center;
-    justify-content: center; */
-    /* min-height: 60vh; */
-    /* margin-bottom: 10em; */
     padding-bottom: 10rem;
 }
 
@@ -51,12 +45,10 @@ footer {
     justify-content: center;
     align-items: center;
     padding-top: 8px;
-    /* margin-bottom: 10em; */
     height: 3em;
     overflow: hidden;
     bottom: 0;
     width: 80vw;
-    /* border-top:.5px solid #fc3232; */
 }
 
 .emblem {
@@ -69,17 +61,6 @@ footer {
     font-size: 30px;
     display: flex;
     justify-content: center;
-}
-
-.posts-header {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 80vw;
-    font-size: 24px;
-    font-family: 'ITC Benguiat', serif;
-    font-weight: bolder;   
 }
 
 .nav-bar {
