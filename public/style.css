@@ -15,7 +15,7 @@ body {
     padding: 0;
 }
 header {
-    /* background: darkslategrey;     */
+    background: darkslategrey;    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -114,7 +114,16 @@ button {
     display: flex;
     flex-direction: column;
     margin-top: 10em;
-    margin-left: 75em;
+    margin-left: 90em;
     position: fixed;
     
+}.addformlabel {
+    display: block;
+}
+
+.postdisplay {
+   
+    margin-top: 10em;
+    margin-right: auto;
+    margin-left: auto;
 }

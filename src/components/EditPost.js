@@ -43,49 +43,45 @@ const EditPost = ({token, setPosts, posts}) => {
   }
   
   return <>
-    <h1>Edit Post</h1>
-
+    {/* <div className="postdisplay"> */}
     <PostSingle post={post} />
+    {/* </div> */}
+      <div className = "addform">
+        <h1>Edit Post</h1>
 
-    <form onSubmit={handleAdd}>
-      {/* <input type="text" placeholder="write your title here" value={title} onChange={(event) => setTitle(event.target.value)}></input>
-      <input type="text" placeholder="description" value={description} onChange={(event) => setDescription(event.target.value)}></input>
-      <input type="text" placeholder="enter your price here" value={price} onChange={(event) => setPrice(event.target.value)}></input>
-      <input type="text" placeholder="location" value={location} onChange={(event) => setLocation(event.target.value)}></input>
-      <select type="text" placeholder="will you deliver the item" value={willDeliver} onChange={(event) => setWillDeliver(event.target.value)}>
-        <option value="willdeliver">will deliver?</option>
-        <option value="false">No</option>
-        <option value="true">Yes</option>
-      </select>     */}
-    <fieldset>
-        <label>Title: </label>
-        <input type="text" placeholder={`${post && post.title}`} value={title} onChange={(event) => setTitle(event.target.value)}></input>    
-    </fieldset>
 
-    <fieldset>
-        <label>Description: </label>
-        <input type="text" placeholder={`${post && post.description}`} value={description} onChange={(event) => setDescription(event.target.value)}></input>    
-    </fieldset>
+          <form onSubmit={handleAdd}>
+      
+            <fieldset>
+              <label className="addformlabel">Title: </label>
+              <input type="text" placeholder={`${post && post.title}`} value={title} onChange={(event) => setTitle(event.target.value)}></input>    
+            </fieldset>
 
-    <fieldset>
-        <label>Price: </label>
-        <input type="text" placeholder={`${post && post.price}`} value={price} onChange={(event) => setPrice(event.target.value)}></input>    
-    </fieldset>
+            <fieldset>
+              <label className="addformlabel">Description: </label>
+              <input type="text" placeholder={`${post && post.description}`} value={description} onChange={(event) => setDescription(event.target.value)}></input>    
+            </fieldset>
 
-    <fieldset>
-        <label>Location: </label>
-        <input type="text" placeholder={`${post && post.location}`} value={location} onChange={(event) => setLocation(event.target.value)}></input>    
-    </fieldset>
+            <fieldset>
+              <label className="addformlabel">Price: </label>
+              <input type="text" placeholder={`${post && post.price}`} value={price} onChange={(event) => setPrice(event.target.value)}></input>    
+            </fieldset>
 
-    <fieldset>
-    <label>Will Deliver: </label>
-      <select type="text" placeholder={`${post && post.willDeliver}`} value={willDeliver} onChange={(event) => setWillDeliver(event.target.value)}>
-        <option value="false">No</option>
-        <option value="true">Yes</option>
-      </select>    
-    </fieldset>
-      <button type="submit">Add post</button>
-    </form>
+            <fieldset>
+              <label className="addformlabel">Location: </label>
+              <input type="text" placeholder={`${post && post.location}`} value={location} onChange={(event) => setLocation(event.target.value)}></input>    
+            </fieldset>
+
+            <fieldset>
+              <label className="addformlabel">Will Deliver: </label>
+              <select type="text" placeholder={`${post && post.willDeliver}`} value={willDeliver} onChange={(event) => setWillDeliver(event.target.value)}>
+                <option value="false">No</option>
+                <option value="true">Yes</option>
+              </select>    
+            </fieldset>
+            <button type="submit">Add post</button>
+          </form>
+    </div>
   </>
 }
 

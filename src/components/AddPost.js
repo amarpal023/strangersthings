@@ -40,27 +40,27 @@ const AddPost = ({token, setPosts}) => {
     <form onSubmit={handleAdd}>
 
     <fieldset>
-        <label>Title: </label>
+        <label className="addformlabel">Title: </label>
         <input type="text" placeholder=" title" value={title} onChange={(event) => setTitle(event.target.value)}></input>    
     </fieldset>
 
     <fieldset>
-        <label>Description: </label>
+        <label className="addformlabel">Description: </label>
         <input type="text" placeholder=" description" value={description} onChange={(event) => setDescription(event.target.value)}></input>    
     </fieldset>
 
     <fieldset>
-        <label>Price: </label>
+        <label className="addformlabel">Price: </label>
         <input type="text" placeholder=" price" value={price} onChange={(event) => setPrice(event.target.value)}></input>    
     </fieldset>
 
     <fieldset>
-        <label>Location: </label>
+        <label className="addformlabel">Location: </label>
         <input type="text" placeholder=" location" value={location} onChange={(event) => setLocation(event.target.value)}></input>    
     </fieldset>
 
     <fieldset>
-    <label>Will Deliver: </label>
+    <label className="addformlabel">Will Deliver: </label>
       <select type="text" value={willDeliver} onChange={(event) => setWillDeliver(event.target.value)}>
         <option value="false">No</option>
         <option value="true">Yes</option>

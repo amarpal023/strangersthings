@@ -8,7 +8,8 @@ import {
   Posts,
   PostView,
   Search, 
-  EditPost
+  EditPost,
+  Profile
 } from './index';
 
 import { callApi } from '../util';
@@ -54,7 +55,10 @@ const App = () => {
       <Link to="/" className="nav-link">Home</Link> 
       <Link to="/posts" className="nav-link">Posts</Link> 
       {
-        token ? <Link to ='/account/logout'className ='nav-link' onClick = {() => setToken('')}>Log Out</Link> : <Link to ='/account/login' className='nav-link'>Login</Link> 
+        token ? <Link to ='/profile' >Profile</Link>:''
+      }
+      {
+        token ? <Link to ='/account/login'className ='nav-link' onClick = {() => setToken('')}>Log Out</Link> : <Link to ='/account/login' className='nav-link'>Login</Link> 
       } 
       </div>
     </header>
@@ -63,12 +67,13 @@ const App = () => {
         <Home user={user} token={token} messages={messages} userId={userId}/>
       </Route>
       
-      <Route>
-        <Search posts={posts} setPosts={setPosts}/>
+      <Route exact path="/profile">
+        <Profile posts={posts} token={token} setPosts={setPosts} setMessages={setMessages} messages={messages} user={user} userId={userId}/>
       </Route>
 
       <Route exact path="/posts">
         {token ? <AddPost token={token} setPosts={setPosts}/> : null}
+        <Search posts={posts} setPosts={setPosts}/>
         <Posts posts={posts} token={token} fetchPosts={fetchPosts} setPosts={setPosts}/>
       </Route>
       
