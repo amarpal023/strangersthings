@@ -13,8 +13,6 @@ const AccountForm = ({setToken, setUser, setMessages, setUserId}) => {
   const history = useHistory();
   
   return <>
-    <h1>Login/Register</h1>
-    <div>This is the {params.method} method</div>
     <form onSubmit={async (event) => {
       event.preventDefault();
       try {
@@ -56,26 +54,32 @@ const AccountForm = ({setToken, setUser, setMessages, setUserId}) => {
         setPassword('')
       }
     }}>
-      <input type="text" placeholder="username" value={username} onChange={(event) => setUsername(event.target.value)}></input>
-        <br/>
-        <br/>
-        <input type="password" placeholder="password" value={password} onChange={(event) => setPassword(event.target.value)}></input>
-        <br/>
+     <div className = "container"> 
+      <h1 className= 'loginheader'><div>{params.method}</div></h1>
+      <br/>
+      <input type="text" placeholder=" username" value={username} onChange={(event) => setUsername(event.target.value)}></input>
+      <br/>
+        
+      <input type="password" placeholder=" password" value={password} onChange={(event) => setPassword(event.target.value)}></input>
+      <br/>
         
         
         {
             params.method === 'register' ?  <input type="password" placeholder="retype your password" value={passwordMatch} onChange={(event) => setPasswordMatch(event.target.value)}></input>
             : ''
         }
+        
         { 
         
             params.method === 'register' ? <button type="submit" disabled={!password || !username || password !== passwordMatch } >Submit</button> : <button type="submit" disabled={!password || !username }>Submit</button>
         
         }
-
-
+        
+        {
+            params.method === 'login' ? <Link to = '/account/register' className="registerhere" >Click here to register</Link> : <Link to = '/account/login'>Click here to login</Link>
+        }   
+     </div>
     </form>
-    {params.method === 'login' ? <Link to = '/account/register'>Click here to register</Link> : <Link to = '/account/login'>Click here to login</Link>}
 </>
 }
 

@@ -23,13 +23,17 @@ const Posts = ({posts, token, fetchPosts}) => {
     {
       posts.map(post => <PostSingle key={post._id} post={post} token={token}>
         {/* props.children */}
-        <Link to={`/posts/${post._id}`}>View Post</Link>
+        
+        {
+          post && <Link to={`/posts/${post._id}`}>View Post</Link>
+        }
+
         {
           post.isAuthor && <Link to={`/posts/edit/${post._id}`}>Edit</Link>
         }
 
         {
-          post.isAuthor && <button onClick={() => handleDelete(post._id)}>Delete</button>
+          post.isAuthor && <Link to={`/posts/delete/${post._id}`} onClick={() => handleDelete(post._id)}>Delete</Link>
         }
       </PostSingle>)
     }

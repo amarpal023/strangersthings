@@ -2,7 +2,9 @@ import React from 'react';
 
 const PostSingle = ({post, children}) => {
   return post 
-    ? <div style={{margin: '.2rem'}}>
+    ? <div 
+    style={{margin: '1.2rem'}}
+    >
       <h5>
         {post.title}
       </h5>

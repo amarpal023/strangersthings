@@ -51,11 +51,11 @@ const App = () => {
     <header className="site-banner">
       <Link to ='/' className='emblem'><h1>Stranger's Things</h1></Link>
       <div className='nav-bar'>
-      <Link to="/" className="nav-link">Home</Link> | 
-      <Link to="/posts" className="nav-link">Posts</Link> |
+      <Link to="/" className="nav-link">Home</Link> 
+      <Link to="/posts" className="nav-link">Posts</Link> 
       {
-        token ? <button className ='logout' onClick = {() => setToken('')}>Log Out</button> : <Link to ='/account/login' className='nav-link'>Login</Link> 
-      } |
+        token ? <Link to ='/account/logout'className ='nav-link' onClick = {() => setToken('')}>Log Out</Link> : <Link to ='/account/login' className='nav-link'>Login</Link> 
+      } 
       </div>
     </header>
     <main>

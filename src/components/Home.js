@@ -16,7 +16,7 @@ const Home = ({user, token, messages, userId}) => {
               console.log('message: ', message);
               return <>
               {userId !== message.fromUser._id ? 
-               <div>{'message.post.title'}: {message.fromUser.username} replied: {message.content}</div>
+               <div>{message.post.title}: {message.fromUser.username} replied: {message.content}</div>
               : ''}
               </>
             })
@@ -27,7 +27,7 @@ const Home = ({user, token, messages, userId}) => {
               console.log('message: ', message);
               return <>
               {userId === message.fromUser._id ? 
-               <div>{'message.post.title'}: {message.fromUser.username} said: {message.content}</div>
+               <div>{message.post.title}: {message.fromUser.username} said: {message.content}</div>
               : ''}
               </>
             })
