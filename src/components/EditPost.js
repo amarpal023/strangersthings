@@ -59,27 +59,27 @@ const EditPost = ({token, setPosts, posts}) => {
       </select>     */}
     <fieldset>
         <label>Title</label>
-        <input type="text" placeholder={`${post.title}`} value={title} onChange={(event) => setTitle(event.target.value)}></input>    
+        <input type="text" placeholder={`${post && post.title}`} value={title} onChange={(event) => setTitle(event.target.value)}></input>    
     </fieldset>
 
     <fieldset>
         <label>Description</label>
-        <input type="text" placeholder={`${post.description}`} value={description} onChange={(event) => setDescription(event.target.value)}></input>    
+        <input type="text" placeholder={`${post && post.description}`} value={description} onChange={(event) => setDescription(event.target.value)}></input>    
     </fieldset>
 
     <fieldset>
         <label>Price</label>
-        <input type="text" placeholder={`${post.price}`} value={price} onChange={(event) => setPrice(event.target.value)}></input>    
+        <input type="text" placeholder={`${post && post.price}`} value={price} onChange={(event) => setPrice(event.target.value)}></input>    
     </fieldset>
 
     <fieldset>
         <label>Location</label>
-        <input type="text" placeholder={`${post.location}`} value={location} onChange={(event) => setLocation(event.target.value)}></input>    
+        <input type="text" placeholder={`${post && post.location}`} value={location} onChange={(event) => setLocation(event.target.value)}></input>    
     </fieldset>
 
     <fieldset>
     <label>Will Deliver</label>
-      <select type="text" placeholder={`${post.willDeliver}`} value={willDeliver} onChange={(event) => setWillDeliver(event.target.value)}>
+      <select type="text" placeholder={`${post && post.willDeliver}`} value={willDeliver} onChange={(event) => setWillDeliver(event.target.value)}>
         <option value="false">No</option>
         <option value="true">Yes</option>
       </select>    
