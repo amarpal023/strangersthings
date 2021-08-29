@@ -6,3 +6,5 @@ export { default as Home } from './Home';
 export { default as Posts } from './Posts';
 export { default as PostSingle } from './PostSingle';
 export { default as PostView } from './PostView';
+export { default as Search } from './Search';
+export { default as EditPost } from './EditPost';

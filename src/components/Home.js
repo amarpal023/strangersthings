@@ -10,13 +10,13 @@ const Home = ({user, token, messages, userId}) => {
           You are logged in as {user}
         </div> 
         <div>
-          <h3>Messages Recieved</h3>
+          <h3>Messages Received</h3>
           {
             messages.map(message => {
               console.log('message: ', message);
               return <>
               {userId !== message.fromUser._id ? 
-               <div>{message.post.title}: {message.fromUser.username} replied: {message.content}</div>
+               <div>{'message.post.title'}: {message.fromUser.username} replied: {message.content}</div>
               : ''}
               </>
             })
@@ -27,7 +27,7 @@ const Home = ({user, token, messages, userId}) => {
               console.log('message: ', message);
               return <>
               {userId === message.fromUser._id ? 
-               <div>{message.post.title}: {message.fromUser.username} said: {message.content}</div>
+               <div>{'message.post.title'}: {message.fromUser.username} said: {message.content}</div>
               : ''}
               </>
             })

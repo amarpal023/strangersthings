@@ -25,6 +25,10 @@ const Posts = ({posts, token, fetchPosts}) => {
         {/* props.children */}
         <Link to={`/posts/${post._id}`}>View Post</Link>
         {
+          post.isAuthor && <Link to={`/posts/edit/${post._id}`}>Edit</Link>
+        }
+
+        {
           post.isAuthor && <button onClick={() => handleDelete(post._id)}>Delete</button>
         }
       </PostSingle>)

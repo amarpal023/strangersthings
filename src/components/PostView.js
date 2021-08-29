@@ -11,7 +11,7 @@ const PostView = ({posts, token}) => {
   console.log('post: ', post);
   return <>
     <PostSingle post={post}>
-      {post && post.messages && post.messages.map(message => <div key={message._id}>{message.fromUser.username}: {message.content} </div>)}
+      {/* {post && post.messages && post.messages.map(message => <div key={message._id}>{message.fromUser.username}: {message.content} </div>)} */}
       <MessageForm token={token} post={post}/>
     </PostSingle>
   </>

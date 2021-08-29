@@ -6,7 +6,9 @@ import {
   AddPost,
   Home,
   Posts,
-  PostView
+  PostView,
+  Search, 
+  EditPost
 } from './index';
 
 import { callApi } from '../util';
@@ -61,6 +63,10 @@ const App = () => {
         <Home user={user} token={token} messages={messages} userId={userId}/>
       </Route>
       
+      <Route>
+        <Search posts={posts} setPosts={setPosts}/>
+      </Route>
+
       <Route exact path="/posts">
         {token ? <AddPost token={token} setPosts={setPosts}/> : null}
         <Posts posts={posts} token={token} fetchPosts={fetchPosts} setPosts={setPosts}/>
@@ -70,6 +76,10 @@ const App = () => {
         <PostView posts={posts} token={token}/>
       </Route>
       
+      <Route exact path="/posts/edit/:postId">
+        <EditPost posts={posts} token={token} setPosts={setPosts}/>
+      </Route>
+
       <Route exact path="/account/:method">
         <AccountForm setToken={setToken} setUser={setUser} 
         setMessages={setMessages} setUserId={setUserId}/>
