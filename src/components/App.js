@@ -55,7 +55,7 @@ const App = () => {
       <Link to="/" className="nav-link">Home</Link> 
       <Link to="/posts" className="nav-link">Posts</Link> 
       {
-        token ? <Link to ='/profile' >Profile</Link>:''
+        token ? <Link to ='/profile' className="nav-link">Profile</Link>:''
       }
       {
         token ? <Link to ='/account/login'className ='nav-link' onClick = {() => setToken('')}>Log Out</Link> : <Link to ='/account/login' className='nav-link'>Login</Link> 
@@ -74,15 +74,21 @@ const App = () => {
       <Route exact path="/posts">
         {token ? <AddPost token={token} setPosts={setPosts}/> : null}
         <Search posts={posts} setPosts={setPosts}/>
+        <div className="postdisplay">
         <Posts posts={posts} token={token} fetchPosts={fetchPosts} setPosts={setPosts}/>
+        </div>
       </Route>
       
       <Route exact path="/posts/:postId">
+        <div className = "postdisplay">
         <PostView posts={posts} token={token}/>
+        </div>
       </Route>
       
       <Route exact path="/posts/edit/:postId">
+        <div className = "postdisplay">
         <EditPost posts={posts} token={token} setPosts={setPosts}/>
+        </div>
       </Route>
 
       <Route exact path="/account/:method">

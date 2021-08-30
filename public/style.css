@@ -114,7 +114,7 @@ button {
     display: flex;
     flex-direction: column;
     margin-top: 10em;
-    margin-left: 90em;
+    margin-left: 85em;
     position: fixed;
     
 }.addformlabel {
@@ -122,8 +122,156 @@ button {
 }
 
 .postdisplay {
-   
+    display: flex;
+    flex-direction: column;
     margin-top: 10em;
     margin-right: auto;
     margin-left: auto;
+    box-sizing: border-box;
+    width: 50%;
+    border: solid rgb(13, 45, 45) 2px;
+    padding: 5px;
+}
+
+.searchbar {
+    display: flex;
+    flex-direction: row;
+    margin-top: 6em;
+    margin-left: 80em;
+    position: fixed;  
+}
+
+.welcome {
+    display:flex;
+    flex-direction: column;
+    margin-top: 5em;
+    margin-left:auto;
+    margin-right: auto; 
+}
+
+.welcomeuser {
+    display:flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    flex-direction: column;
+    margin-top: 10em;
+    margin-left:auto;
+    margin-right: auto; 
+    font-weight: bolder;
+    font-size: x-large;
+}
+
+.addmessage {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0em;
+    margin-left: 52em;
+    position: fixed;
+}
+
+.addmessagelabel {
+    display: block;
+}
+
+.editform {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0em;
+    margin-left: 60em;
+    position: fixed;  
+}
+
+.editformlabel {
+    display: block;
+}
+
+.messageview {
+    display:flex;
+    flex-direction: column;
+    margin-top: 5em;
+    padding-left: 46%;
+
+}
+
+.messagereceived {
+    display:flex;
+    flex-direction: column;
+    margin-top: 5em;
+    margin-left:auto;
+    margin-right: auto; 
+    border: solid rgb(13, 45, 45) 2px;
+    justify-content: center;
+    width: 50%;
+    background-color: darkslategrey;
+    color: white;
+    
+}
+
+.messagesent {
+    display:flex;
+    flex-direction: column;
+    margin-top: 5em;
+    margin-left:auto;
+    margin-right: auto; 
+    border: solid rgb(13, 45, 45) 2px;
+    width: 50%;
+    background-color: darkslategrey;
+    color: white;
+}
+
+.messagereceivedsent {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0em;
+    margin-left:auto;
+    margin-right: auto; 
+    border: none;
+    background-color: whitesmoke;
+    justify-content: center;
+    width: 50%;    
+}
+
+.view-link:hover {
+    color: darkslategrey;
+    background-color: whitesmoke;
+}
+
+.view-link {
+    color: white;
+    background-color: darkslategrey;
+    text-decoration: none;
+    padding: 0px 10px;
+    word-wrap: normal;
+    display: inline-block;
+    font-size: larger;
+}
+
+.edit-link:hover {
+    color: darkslategrey;
+    background-color: whitesmoke;
+}
+
+.edit-link {
+    color: white;
+    background-color: darkslategrey;
+    text-decoration: none;
+    padding: 0px 10px;
+    word-wrap: normal;
+    display: inline-block;
+    font-size: larger;
+}
+
+.delete-link:hover {
+    color: darkslategrey;
+    background-color: whitesmoke;
+}
+
+.delete-link {
+    color: white;
+    background-color: darkslategrey;
+    text-decoration: none;
+    padding: 0px 10px;
+    word-wrap: normal;
+    display: inline-block;
+    font-size: larger;
 }

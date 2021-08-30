@@ -24,9 +24,9 @@ function Search({posts, setPosts}) {
 const allPosts = response.data.posts;
         if(allPosts) setPosts(allPosts);
     }
-    
+
 return <>
-<form onSubmit={(ev) => {
+<form className="searchbar" onSubmit={(ev) => {
     ev.preventDefault()
     handleSubmit()
 }}>

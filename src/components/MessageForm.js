@@ -23,9 +23,9 @@ const MessageForm = ({post, token}) => {
     return <>
     {
         token && !post.isAuthor ? 
-        <form className="addform"onSubmit={handleSubmit}>
+        <form className="addmessage"onSubmit={handleSubmit}>
         <label>Compose Message:</label>
-        <input value={content} placeholder="content" onChange={(ev) => setContent(ev.target.value)}></input>
+        <input className="addmessagelabel" value={content} placeholder="content" onChange={(ev) => setContent(ev.target.value)}></input>
         <button type="submit">Send Message</button>
         </form> : ''
 

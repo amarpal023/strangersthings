@@ -2,31 +2,31 @@ import React from "react";
 
 const Profile = ({token, messages, user, userId}) => {
     return <div>
-        <h1>My Profile</h1>
+        <h1 className = "messageview">My Profile</h1>
         {
             token ? <> 
       
         <div>
-          <h3>Messages Received</h3>
+          <h3 className = "messagereceived">Messages Received</h3>
           {
-            messages.map(message => {
+            messages.map((message,index) => {
               console.log('message: ', message);
-              return <>
+              return <div key= {index}>
               {userId !== message.fromUser._id ? 
-               <div>{message.post.title}: {message.fromUser.username} replied: {message.content}</div>
+               <div className ="messagereceivedsent">{message.post.title}: {message.fromUser.username} replied: {message.content}</div>
               : ''}
-              </>
+              </div>
             })
           }
-          <h3>Messages Sent</h3>
+          <h3 className = "messagesent">Messages Sent</h3>
           {
-            messages.map(message => {
+            messages.map((message, index) => {
               console.log('message: ', message);
-              return <>
+              return <div key= {index}>
               {userId === message.fromUser._id ? 
-               <div>{message.post.title}: {message.fromUser.username} said: {message.content}</div>
+               <div className ="messagereceivedsent">{message.post.title}: {message.fromUser.username} said: {message.content}</div>
               : ''}
-              </>
+              </div>
             })
           }
         </div>

@@ -25,15 +25,15 @@ const Posts = ({posts, token, fetchPosts}) => {
         {/* props.children */}
         
         {
-          post && <Link to={`/posts/${post._id}`}>View Post</Link>
+          post && <Link to={`/posts/${post._id}`} className="view-link">View Post</Link>
         }
 
         {
-          post.isAuthor && <Link to={`/posts/edit/${post._id}`}>Edit</Link>
+          post.isAuthor && <Link to={`/posts/edit/${post._id}`} className="edit-link">Edit</Link>
         }
 
         {
-          post.isAuthor && <Link to={`/posts/delete/${post._id}`} onClick={() => handleDelete(post._id)}>Delete</Link>
+          post.isAuthor && <Link to={`/posts/delete/${post._id}`} onClick={() => handleDelete(post._id)} className="delete-link">Delete</Link>
         }
       </PostSingle>)
     }
