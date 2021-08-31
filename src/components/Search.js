@@ -1,9 +1,8 @@
-import React, { useState, useEffect} from 'react';
-import PostSingle from './PostSingle';
-// import { callApi } from '../util';
+import React, { useState } from 'react';
+
 
 function Search({posts, setPosts}) {
-    // const [posts, setPosts] = useState([]);
+    
     const [searchTerm, setSearchTerm] = useState('');
     const postMatches = (post, text) => {
         let check = post.includes(text);
@@ -11,7 +10,7 @@ function Search({posts, setPosts}) {
     }
     const handleSubmit = () => {
         const filteredPosts = posts.filter(post => postMatches(post.title.toLowerCase(), searchTerm));
-        // const postsToDisplay = searchTerm.length ? filteredPosts : posts;
+        
         setPosts(filteredPosts);
         if (!searchTerm.length) {
             fetchPosts();

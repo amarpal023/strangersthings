@@ -1,6 +1,6 @@
 import React from "react";
 
-const Profile = ({token, messages, user, userId}) => {
+const Profile = ({token, messages, userId}) => {
     return <div>
         <h1 className = "messageview">My Profile</h1>
         {

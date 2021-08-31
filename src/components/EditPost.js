@@ -34,10 +34,10 @@ const EditPost = ({token, setPosts, posts}) => {
       }
     });
     console.log('postResp: ', postResp);
-    // fetch the posts again, adding our token
+    
     const postsResp = await callApi({url: '/posts', token});
     console.log('postsResp: ', postsResp);
-    // set the posts on state
+ 
     setPosts(postsResp.data.posts);
     history.push('/posts')
   }

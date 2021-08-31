@@ -25,5 +25,3 @@ export const callApi = async ({url, method, token, body}) => {
   }
 }
 
-// example of calling it
-// callApi({url: '/posts', method: 'POST', token})

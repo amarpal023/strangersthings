@@ -16,8 +16,7 @@ const AccountForm = ({setToken, setUser, setMessages, setUserId}) => {
     <form onSubmit={async (event) => {
       event.preventDefault();
       try {
-      // we need to send a fetch request, so we can get the token
-      // in order to get a token, the server wants... username and password
+      
       const fetchUrl = `${REACT_APP_BASE_URL}/users/${params.method}`
       console.log('fetchUrl: ', fetchUrl);
 
@@ -37,7 +36,7 @@ const AccountForm = ({setToken, setUser, setMessages, setUserId}) => {
       
 
       if(loginResp.data) {
-        // if we got back a token, get the user data
+        
         const userResp = await callApi({url: '/users/me', token: loginResp.data.token});
         setToken(loginResp.data.token);
         setUser(userResp.data.username);

@@ -17,12 +17,12 @@ const Posts = ({posts, token, fetchPosts}) => {
     console.log('respObj: ', respObj);
     await fetchPosts();
   }
-  // if... isAuthor is true... then show delete
+  
   
   return <>
     {
       posts.map(post => <PostSingle key={post._id} post={post} token={token}>
-        {/* props.children */}
+       
         
         {
           post && <Link to={`/posts/${post._id}`} className="view-link">View Post</Link>
